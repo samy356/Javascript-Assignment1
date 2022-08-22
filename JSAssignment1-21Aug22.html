@@ -1,0 +1,67 @@
+<!--Javascript Assignment1-->
+<!DOCTYPE html>
+<html>
+    <title>
+        Assignment1
+    </title>
+    <head>
+        <h1>Javascript Assignment1</h1>
+    </head>
+    <body>
+        <h2>LeapYear</h2><br/>
+        <script id="leapYear" defer>
+            function leapYear(year){
+                if(year%4==0){
+                    document.getElementById('output1').innerText='It is a Leap Year';
+                }else{
+                    document.getElementById('output1').innerText='It is not a Leap Year';
+                }
+            }
+        </script>
+        <input type="number" placeholder="Enter Year" id="lYear"/>
+        <button onclick="leapYear(document.getElementById('lYear').value)" >Check</button><br/>
+        <output name="output1" placeholder="Result" id="output1">Result</output>
+
+        <h2>Temperature Convertor</h2><br/>
+        <script defer>
+            function tempConversion(unit,temp){
+                if (unit==='*C'){
+                    let new_temp = (temp*9/5)+32;
+                    document.getElementById('output2').innerText=(`${temp}*C = ${new_temp}*F`);
+                }else if (unit==='*F'){
+                    let new_temp = (temp-32)*5/9;
+                    document.getElementById('output2').innerText=(`${temp}*F = ${new_temp}*C`);
+                }
+            }
+        </script>
+        <input type="number" placeholder="Enter Temp" id="temp"/>
+        <button onclick="tempConversion('*C',document.getElementById('temp').value)">*C</button>
+        <button onclick="tempConversion('*F',document.getElementById('temp').value)">*F</button>
+        Select entered Temperature unit<br/>
+        <output name="output2" aria-placeholder="Result" id="output2">Result</output>
+
+        <h2>Factorial</h2><br/>
+        <script>
+            function factorial (num){
+                if (num>0){
+                    let i = 1; let j = 1;
+                    while (i<=num){
+                        j = j*i; i+=1;
+                    }
+                    document.getElementById('output3').value = (`Factorial of ${num} = ${j}`);
+                }else if (num==0){
+                    document.getElementById('output3').value = ('Factorial of Zero is 1');
+                }else{
+                    document.getElementById('output3').value = 'Enter a number >= 0';
+                }
+            }
+        </script>
+        <input type="number" placeholder="Enter a number" id="facto"/>
+        <button onclick="factorial(document.getElementById('facto').value)">Get Answer</button><br/>
+        <output aria-placeholder="Answer" id="output3">Result</output>
+    </body><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+    <footer>
+        <i>Dated = 22 Aug 2022, By Samyant</i> 
+    </footer>
+</html>
